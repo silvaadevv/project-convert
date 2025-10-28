@@ -7,7 +7,6 @@ function convertValues() {
     const currencyValueToConvert = document.getElementsByClassName('currency-value-to-convert')[0];
     const currencyValueConverted = document.getElementsByClassName('currency-value')[0];
 
-    // valores fixos (1 unidade de cada em relação ao real)
     const rates = {
         real: 1,
         dolar: 5.41,
@@ -20,11 +19,9 @@ function convertValues() {
     const to = currencySelect.value;
     const inputValue = Number(input.value.replace(',', '.')) || 0;
 
-    // converte o valor para REAL e depois para o destino
     const valueInReal = inputValue * rates[from];
     const convertedValue = valueInReal / rates[to];
 
-    // formata moeda origem
     if (from === 'bitcoin') {
         currencyValueToConvert.innerHTML = inputValue.toFixed(8) + ' BTC';
     } else {
@@ -35,7 +32,6 @@ function convertValues() {
         }).format(inputValue);
     }
 
-    // formata moeda destino
     if (to === 'bitcoin') {
         currencyValueConverted.innerHTML = convertedValue.toFixed(8) + ' BTC';
     } else {
@@ -47,7 +43,6 @@ function convertValues() {
     }
 }
 
-// muda a moeda de origem (lado esquerdo)
 function changeCurrencyFrom() {
     const currencyName1 = document.getElementById('currency-from-name');
     const currencyImg1 = document.getElementById('currency-from-img');
@@ -80,7 +75,6 @@ function changeCurrencyFrom() {
     convertValues();
 }
 
-// muda a moeda de destino (lado direito)
 function changeCurrency() {
     const currencyName = document.getElementById('currency-name');
     const currencyImg = document.getElementById('currency-img');
