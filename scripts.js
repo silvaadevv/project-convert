@@ -9,10 +9,10 @@ function convertValues() {
 
     const rates = {
         real: 1,
-        dolar: 5.41,
-        euro: 6.29,
-        libra: 7.28,
-        bitcoin: 578862.33
+        dolar: 5.38,
+        euro: 6.23,
+        libra: 7.07,
+        bitcoin: 592674.17
     };
 
     const from = currencyFrom.value;
